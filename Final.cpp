@@ -248,26 +248,36 @@ int main()
 
 	Skybox skybox = Skybox(faces);
 
-	// Shader configuration
+	// CONFIGURACION DEL SHADER
 	// --------------------
 	skyboxShader.use();
 	skyboxShader.setInt("skybox", 0);
 
-	// load models
+	// CARGA DE MODELOS
 	// -----------
+	//****** BLOQUE 1 (PISO CASA)
 	Model piso("resources/objects/piso/piso.obj");
 	Model casa("resources/objects/Casa/CasaFinal.obj");
-	//Model sala("resources/objects/Casa/SalaFinal.obj");
-	//Model comedor("resources/objects/Casa/ComedorFinal.obj");
-	//Model arbol("resources/objects/Casa/ArbolFinal.obj"); //CAMBIAR REGALOS
-	//Model cocina("resources/objects/Casa/CocinaOK.obj");//TEXTURAS
-	Model cuartoPrinci("resources/objects/Casa/CuartoFinal.obj");//CORRECCION TEXTURAS
-	//Model banioPb("resources/objects/Casa/BanioPBFinal.obj");//CORRECCION TEXTURAS
-	////Model cuartoEntrete("resources/objects/Casa/BanioPaOK.obj");//CORRECCION TEXTURAS
-	//Model banioPa("resources/objects/Casa/BanioPAFinal.obj");//CORRECCION TEXTURAS
-	////Model cuartoBB("resources/objects/Casa/CuartoBBOK.obj");//CORRECCION TEXTURAS
-	Model TVcuarto("resources/objects/Casa/TVCuarto.obj");
-	
+
+	//****** BLOQUE 2 (SALA-COMEDOR-COCINA)
+	Model sala("resources/objects/Casa/SalaFinal.obj");
+	Model comedor("resources/objects/Casa/ComedorFinal.obj");
+	//Model arbol("resources/objects/Casa/ArbolFinal.obj"); 
+	//Model cocina("resources/objects/Casa/CocinaFinal.obj");
+	//Model cocinadeta("resources/objects/Casa/CocinaDetaFinal.obj");
+
+	//****** BLOQUE 3 (RECAMARA, BAÑO)
+	//Model cuartoPrinci("resources/objects/Casa/CuartoFinal.obj");
+	//Model TVcuarto("resources/objects/Casa/TVCuarto.obj");
+	//Model banioPb("resources/objects/Casa/BanioPBFinal.obj");
+
+	//****** BLOQUE 4 (CUARTO ENTRETENIMIENTO, BAÑO PA, CUARTO BB)
+	Model cuartoEntrete1("resources/objects/Casa/CuartoEnfinal.obj");
+	Model cuartoEntrete2("resources/objects/Casa/CuartoEn2Final.obj");
+	Model cuartoEntrete3("resources/objects/Casa/CuartoEn3Final.obj");
+	Model banioPa("resources/objects/Casa/BanioPAFinal.obj");
+	Model cuartoBB("resources/objects/Casa/CuartoBBFinal.obj");
+
 	
 	//ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae");
 	//animacionPersonaje.initShaders(animShader.ID);
@@ -328,8 +338,8 @@ int main()
 		staticShader.setVec3("pointLight[1].diffuse", glm::vec3(0.0f, 0.0f, 0.0f));
 		staticShader.setVec3("pointLight[1].specular", glm::vec3(0.0f, 0.0f, 0.0f));
 		staticShader.setFloat("pointLight[1].constant", 1.0f);
-		staticShader.setFloat("pointLight[1].linear", 0.009f);
-		staticShader.setFloat("pointLight[1].quadratic", 0.032f);
+		staticShader.setFloat("pointLight[1].linear", 0.09f);
+		staticShader.setFloat("pointLight[1].quadratic", 0.32f);
 
 		staticShader.setFloat("material_shininess", 32.0f);
 
@@ -386,6 +396,7 @@ int main()
 		staticShader.setMat4("projection", projection);
 		staticShader.setMat4("view", view);
 
+		//****** BLOQUE 1 (PISO CASA)
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
@@ -396,29 +407,31 @@ int main()
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Elementos Casa
 		// -------------------------------------------------------------------------------------------------------------------------
+		//****** BLOQUE 1 (PISO CASA)
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		casa.Draw(staticShader);
 
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//sala.Draw(staticShader);
+		//****** BLOQUE 2 (SALA-COMEDOR-COCINA)
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		sala.Draw(staticShader);
 
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//comedor.Draw(staticShader);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		comedor.Draw(staticShader);
 
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//arbol.Draw(staticShader);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		arbol.Draw(staticShader);
 
 		//model = glm::mat4(1.0f);
 		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
@@ -426,11 +439,24 @@ int main()
 		//staticShader.setMat4("model", model);
 		//cocina.Draw(staticShader);
 
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
-		staticShader.setMat4("model", model);
-		cuartoPrinci.Draw(staticShader);
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//cocinadeta.Draw(staticShader);
+
+		//****** BLOQUE 3 (RECAMARA, BAÑO)
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//cuartoPrinci.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//TVcuarto.Draw(staticShader);
 
 		//model = glm::mat4(1.0f);
 		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
@@ -438,11 +464,24 @@ int main()
 		//staticShader.setMat4("model", model);
 		//banioPb.Draw(staticShader);
 
-		////model = glm::mat4(1.0f);
-		////model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		////model = glm::scale(model, glm::vec3(0.2f));
-		////staticShader.setMat4("model", model);
-		////cuartoEntrete.Draw(staticShader);
+		//****** BLOQUE 4 (CUARTO ENTRETENIMIENTO, BAÑO PA, CUARTO BB)
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//cuartoEntrete1.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//cuartoEntrete2.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//cuartoEntrete3.Draw(staticShader);
 
 		//model = glm::mat4(1.0f);
 		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
@@ -450,19 +489,11 @@ int main()
 		//staticShader.setMat4("model", model);
 		//banioPa.Draw(staticShader);
 
-		////model = glm::mat4(1.0f);
-		////model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		////model = glm::scale(model, glm::vec3(0.2f));
-		////staticShader.setMat4("model", model);
-		////cuartoBB.Draw(staticShader);
-
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
-		staticShader.setMat4("model", model);
-		TVcuarto.Draw(staticShader);
-
-
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//cuartoBB.Draw(staticShader);
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Animaciones
