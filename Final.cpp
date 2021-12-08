@@ -260,8 +260,8 @@ int main()
 	Model casa("resources/objects/Casa/CasaFinal.obj");
 
 	//****** BLOQUE 2 (SALA-COMEDOR-COCINA)
-	Model sala("resources/objects/Casa/SalaFinal.obj");
-	Model comedor("resources/objects/Casa/ComedorFinal.obj");
+	//Model sala("resources/objects/Casa/SalaFinal.obj");
+	//Model comedor("resources/objects/Casa/ComedorFinal.obj");
 	//Model arbol("resources/objects/Casa/ArbolFinal.obj"); 
 	//Model cocina("resources/objects/Casa/CocinaFinal.obj");
 	//Model cocinadeta("resources/objects/Casa/CocinaDetaFinal.obj");
@@ -272,13 +272,54 @@ int main()
 	//Model banioPb("resources/objects/Casa/BanioPBFinal.obj");
 
 	//****** BLOQUE 4 (CUARTO ENTRETENIMIENTO, BAÑO PA, CUARTO BB)
-	Model cuartoEntrete1("resources/objects/Casa/CuartoEnfinal.obj");
-	Model cuartoEntrete2("resources/objects/Casa/CuartoEn2Final.obj");
-	Model cuartoEntrete3("resources/objects/Casa/CuartoEn3Final.obj");
-	Model banioPa("resources/objects/Casa/BanioPAFinal.obj");
-	Model cuartoBB("resources/objects/Casa/CuartoBBFinal.obj");
+	//Model cuartoEntrete1("resources/objects/Casa/CuartoEnfinal.obj");
+	//Model cuartoEntrete2("resources/objects/Casa/CuartoEn2Final.obj");
+	//Model cuartoEntrete3("resources/objects/Casa/CuartoEn3Final.obj");
+	//Model banioPa("resources/objects/Casa/BanioPAFinal.obj");
+	//Model cuartoBB("resources/objects/Casa/CuartoBBFinal.obj");
 
-	
+	//****** BLOQUE 5 (Exterior)
+	Model exterior1("resources/objects/Exterior/Exterior.obj");
+
+	//MODELOS PARA ANIMAR
+	//LEGO
+	//Model legocabeza("resources/objects/Lego/LegoCabeza.obj");
+	//Model legocuerpo("resources/objects/Lego/LegoCuero.obj");
+	//Model legobrazoizq("resources/objects/Lego/LegoBrazoIzq.obj");
+	//Model legobrazoder("resources/objects/Lego/LegoBrazoDer.obj");
+	//Model legopieizq("resources/objects/Lego/LegoPieIzq.obj");
+	//Model legopieder("resources/objects/Lego/LegoPieDer.obj");
+
+	//LEG
+	Model legocabeza2("resources/objects/Lego/LegCabeza.obj");
+	Model legocuerpo2("resources/objects/Lego/LegCuero.obj");
+	Model legobrazoizq2("resources/objects/Lego/LegBrazoIzq.obj");
+	Model legobrazoder2("resources/objects/Lego/LegBrazoDer.obj");
+	Model legopieizq2("resources/objects/Lego/LegPieIzq.obj");
+	Model legopieder2("resources/objects/Lego/LegPieDer.obj");
+
+	//TREN
+	//Model trenEstructura("resources/objects/Tren/TrenEstructura.obj");
+	//Model trenCampana("resources/objects/Tren/TrenCampana.obj");
+	//Model trenBarraI("resources/objects/Tren/TrenBarraIzq.obj");
+	//Model trenBarraD("resources/objects/Tren/TrenBarraDer.obj");
+	//Model trenRuedaI1("resources/objects/Tren/TrenRuedaIzq1.obj");
+	//Model trenRuedaI2("resources/objects/Tren/TrenRuedaIzq2.obj");
+	//Model trenRuedaI3("resources/objects/Tren/TrenRuedaIzq3.obj");
+	//Model trenRuedaI4("resources/objects/Tren/TrenRuedaIzq4.obj");
+	//Model trenRuedaD1("resources/objects/Tren/TrenRuedaDer1.obj");
+	//Model trenRuedaD2("resources/objects/Tren/TrenRuedaDer2.obj");
+	//Model trenRuedaD3("resources/objects/Tren/TrenRuedaDer3.obj");
+	//Model trenRuedaD4("resources/objects/Tren/TrenRuedaDer4.obj");
+
+	//Reloj
+	//Model relojBase("resources/objects/Reloj/RelojBase.obj");
+	//Model relojEstruc("resources/objects/Reloj/RelojEstructura.obj");
+	//Model relojCamp1("resources/objects/Reloj/RelojCampana1.obj");
+	//Model relojCamp2("resources/objects/Reloj/RelojCampana2.obj");
+	//Model relojMane1("resources/objects/Reloj/RelojManecilla1.obj");
+	//Model relojMane2("resources/objects/Reloj/RelojManecilla2.obj");
+
 	//ModelAnim animacionPersonaje("resources/objects/Personaje1/PersonajeBrazo.dae");
 	//animacionPersonaje.initShaders(animShader.ID);
 
@@ -415,23 +456,23 @@ int main()
 		casa.Draw(staticShader);
 
 		//****** BLOQUE 2 (SALA-COMEDOR-COCINA)
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
-		staticShader.setMat4("model", model);
-		sala.Draw(staticShader);
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//sala.Draw(staticShader);
 
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
-		staticShader.setMat4("model", model);
-		comedor.Draw(staticShader);
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//comedor.Draw(staticShader);
 
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
-		staticShader.setMat4("model", model);
-		arbol.Draw(staticShader);
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//arbol.Draw(staticShader);
 
 		//model = glm::mat4(1.0f);
 		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
@@ -496,9 +537,203 @@ int main()
 		//cuartoBB.Draw(staticShader);
 
 		// -------------------------------------------------------------------------------------------------------------------------
-		// Animaciones
+		// Elementos Exteriores
+		// -------------------------------------------------------------------------------------------------------------------------
+		//****** BLOQUE 5 (Exterior)
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		exterior1.Draw(staticShader);
+
+		// -------------------------------------------------------------------------------------------------------------------------
+		// Elementos Animaciones
 		// -------------------------------------------------------------------------------------------------------------------------
 
+		//Lego
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//legocabeza.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//legocuerpo.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//legobrazoizq.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//legobrazoder.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//legopieizq.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//legopieder.Draw(staticShader);
+
+		//Lego
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		legocabeza2.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		legocuerpo2.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		legobrazoizq2.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		legobrazoder2.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		legopieizq2.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		legopieder2.Draw(staticShader);
+
+		//Tren
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenEstructura.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenCampana.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenBarraI.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenBarraD.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenRuedaI1.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenRuedaI2.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenRuedaI3.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenRuedaI4.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenRuedaD1.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenRuedaD2.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenRuedaD3.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//trenRuedaD4.Draw(staticShader);
+
+		//Reloj
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//relojBase.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//relojEstruc.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//relojCamp1.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//relojCamp2.Draw(staticShader);
+
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//relojMane1.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		relojMane2.Draw(staticShader);
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Caja Transparente --- Siguiente Práctica
@@ -555,60 +790,68 @@ void my_input(GLFWwindow *window, int key, int scancode, int action, int mode)
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 		camera.ProcessKeyboard(RIGHT, (float)deltaTime);
 	//To Configure Model
-	if (glfwGetKey(window, GLFW_KEY_Y) == GLFW_PRESS)
-		posZ++;
-	if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS)
-		posZ--;
-	if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS)
-		posX--;
-	if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
-		posX++;
-	if (glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS)
-		rotRodIzq--;
-	if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS)
-		rotRodIzq++;
-	if (glfwGetKey(window, GLFW_KEY_V) == GLFW_PRESS)
-		giroMonito--;
-	if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS)
-		giroMonito++;
-	if (glfwGetKey(window, GLFW_KEY_M) == GLFW_PRESS)
-		lightPosition.x++;
-	if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
-		lightPosition.x--;
+	//if (glfwGetKey(window, GLFW_KEY_Y) == GLFW_PRESS)
+	//	posZ++;
+	//if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS)
+	//	posZ--;
+	//if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS)
+	//	posX--;
+	//if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
+	//	posX++;
+	//if (glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS)
+	//	rotRodIzq--;
+	//if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS)
+	//	rotRodIzq++;
+	//if (glfwGetKey(window, GLFW_KEY_V) == GLFW_PRESS)
+	//	giroMonito--;
+	//if (glfwGetKey(window, GLFW_KEY_B) == GLFW_PRESS)
+	//	giroMonito++;
+	//if (glfwGetKey(window, GLFW_KEY_M) == GLFW_PRESS)
+	//	lightPosition.x++;
+	//if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
+	//	lightPosition.x--;
 
 	//ACTIVAR ANIMACIONES
+	//Animacion Lego
 	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
 		animacion ^= true;
+	//Animacion Tren
+
+	//Animacion Reloj
+
+	//Animacion 
+
+	//Animacion 
 
 	//ANIMAR POR KEY FRAMES
-	if (key == GLFW_KEY_P && action == GLFW_PRESS)
-	{
-		if (play == false && (FrameIndex > 1))
-		{
-			std::cout << "Play animation" << std::endl;
-			resetElements();
-			//First Interpolation				
-			interpolation();
+	//if (key == GLFW_KEY_P && action == GLFW_PRESS)
+	//{
+	//	if (play == false && (FrameIndex > 1))
+	//	{
+	//		std::cout << "Play animation" << std::endl;
+	//		resetElements();
+	//		//First Interpolation				
+	//		interpolation();
 
-			play = true;
-			playIndex = 0;
-			i_curr_steps = 0;
-		}
-		else
-		{
-			play = false;
-			std::cout << "Not enough Key Frames" << std::endl;
-		}
-	}
+	//		play = true;
+	//		playIndex = 0;
+	//		i_curr_steps = 0;
+	//	}
+	//	else
+	//	{
+	//		play = false;
+	//		std::cout << "Not enough Key Frames" << std::endl;
+	//	}
+	//}
 
 	//SALVAR LOS KEY FRAMES
-	if (key == GLFW_KEY_L && action == GLFW_PRESS)
-	{
-		if (FrameIndex < MAX_FRAMES)
-		{
-			saveFrame();
-		}
-	}
+	//if (key == GLFW_KEY_L && action == GLFW_PRESS)
+	//{
+	//	if (FrameIndex < MAX_FRAMES)
+	//	{
+	//		saveFrame();
+	//	}
+	//}
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
