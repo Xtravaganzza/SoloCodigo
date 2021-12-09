@@ -60,14 +60,61 @@ glm::vec3 lightDirection(0.0f, -1.0f, -1.0f);
 // posiciones
 //float x = 0.0f;
 //float y = 0.0f;
-float	movAuto_x = 0.0f,
-		movAuto_z = 0.0f,
-		orienta = 0.0f;
-bool	animacion = false,
-		recorrido1 = true,
-		recorrido2 = false,
-		recorrido3 = false,
-		recorrido4 = false;
+
+//VARIABLES ANIMACION TREN
+float	movTren_x = 0.0f,
+		movTren_y = 0.0f,
+		movTren_z = 0.0f,
+		movCampana = 0.0f,
+		movBarra = 0.0f,
+		giroRuedas = 0.0f,
+		orientaTren = 0.0f;
+
+bool	animacionTren = false,
+		recorridoTren1 = true,
+		recorridoTren2 = false,
+		recorridoTren3 = false,
+		recorridoTren4 = false,
+		recorridoTren5 = false,
+		recorridoTren6 = false,
+		recorridoTren7 = false;
+
+//VARIABLES ANIMACION LEGO
+float	movLego_x = 0.0f,
+		movLego_y = 0.0f,
+		movLego_z = 0.0f,
+		movPieDer = 0.0f,
+		movPieIzq = 0.0f,
+		movBrazoDer = 0.0f,
+		movBrazoIzq = 0.0f,
+		movCabeza = 0.0f,
+		movTorzo = 0.0f,
+		orientaLego = 0.0f;
+
+bool	animacionLego = false,
+		recorridoLego1 = true;
+
+//VARIABLES ANIMACION LEGO2
+float	movLego2_x = 0.0f,
+		movLego2_y = 0.0f,
+		movLego2_z = 0.0f,
+		movPieDer2 = 0.0f,
+		movPieIzq2 = 0.0f,
+		movBrazoDer2 = 0.0f,
+		movBrazoIzq2 = 0.0f,
+		movCabeza2 = 0.0f,
+		movTorzo2 = 0.0f,
+		orientaLego2 = 0.0f;
+
+bool	animacionLego2 = false,
+		recorrido2Lego1 = true,
+		recorrido2Lego2 = false,
+		recorrido2Lego3 = false,
+		recorrido2Lego4 = false,
+		recorrido2Lego5 = false,
+		recorrido2Lego6 = false,
+		recorrido2Lego7 = false,
+		recorrido2Lego8 = false;
 
 //Keyframes (Manipulación y dibujo)
 float	posX = 0.0f,
@@ -75,6 +122,7 @@ float	posX = 0.0f,
 		posZ = 0.0f,
 		rotRodIzq = 0.0f,
 		giroMonito = 0.0f;
+
 float	incX = 0.0f,
 		incY = 0.0f,
 		incZ = 0.0f,
@@ -170,7 +218,220 @@ void animate(void)
 		}
 	}
 
-	//ANIMACIONES
+	//////////////////ANIMACIONES PROY
+	//ANIMACION TREN
+	if (animacionTren)
+	{
+		if (recorridoTren1)
+		{
+			movTren_x += 1.0f;
+			orientaTren = 0.0f;
+			//cout << "Posicion x: " << movTren_x << endl;
+			//cout << "Posicion y: " << movTren_y << endl;
+			//cout << "Posicion z: " << movTren_z << endl;
+			//giroRuedas += 1.0f;
+			if (movTren_x == 150.0f)
+			{
+				recorridoTren1 = false;
+				recorridoTren2 = true;
+			}
+		}
+		if (recorridoTren2)
+		{
+			movTren_z += 1.0f;
+			//orientaTren = -90.0f;
+			//cout << "Posicion x: " << movTren_x << endl;
+			//cout << "Posicion y: " << movTren_y << endl;
+			//cout << "Posicion z: " << movTren_z << endl;
+			//giroRuedas = 1.0f;
+			if (movTren_z == 150.0f)
+			{
+				recorridoTren2 = false;
+				recorridoTren3 = true;
+			}
+		}
+		if (recorridoTren3)
+		{
+			movTren_x -= 1.0f;
+			//orientaTren = 180.0f;
+			//cout << "Posicion x: " << movTren_x << endl;
+			//cout << "Posicion y: " << movTren_y << endl;
+			//cout << "Posicion z: " << movTren_z << endl;
+			//giroRuedas = 1.0f;
+			if (movTren_z == 0.0f)
+			{
+				recorridoTren3 = false;
+				recorridoTren4 = true;
+			}
+		}
+		if (recorridoTren4)
+		{
+			movTren_z -= 1.0f;
+			//orientaTren = 90.0f;
+			//cout << "Posicion x: " << movTren_x << endl;
+			//cout << "Posicion y: " << movTren_y << endl;
+			//cout << "Posicion z: " << movTren_z << endl;
+			//giroRuedas = 1.0f;
+			if (movTren_z == 0.0f)
+			{
+				recorridoTren4 = false;
+				recorridoTren5 = true;
+			}
+		}
+		if (recorridoTren5)
+		{
+			movTren_x += 1.5f;
+			movTren_z += 1.5f;
+			//orientaTren = -45.0f;
+			//cout << "Posicion x: " << movTren_x << endl;
+			//cout << "Posicion y: " << movTren_y << endl;
+			//cout << "Posicion z: " << movTren_z << endl;
+			//giroRuedas = 1.0f;
+			if (movTren_x >= 150.0f && movTren_z >= 150.0f)
+			{
+				recorridoTren5 = false;
+				recorridoTren6 = true;
+			}
+		}
+		if (recorridoTren6)
+		{
+			movTren_x -= 1.0f;
+			//orientaTren = 180.0f;
+			//cout << "Posicion x: " << movTren_x << endl;
+			//cout << "Posicion y: " << movTren_y << endl;
+			//cout << "Posicion z: " << movTren_z << endl;
+			//giroRuedas = 1.0f;
+			if (movTren_z = 0.0f)
+			{
+				recorridoTren6 = false;
+				recorridoTren7 = true;
+			}
+		}
+		if (recorridoTren7)
+		{
+			movTren_z -= 1.0f;
+			//orientaTren = 90.0f;
+			//cout << "Posicion x: " << movTren_x << endl;
+			//cout << "Posicion y: " << movTren_y << endl;
+			//cout << "Posicion z: " << movTren_z << endl;
+			//giroRuedas = 1.0f;
+			if (movTren_z = 0.0f)
+			{
+				recorridoTren7 = false;
+				animacionTren = false;
+			}
+		}
+	}
+
+	if (animacionLego) 
+	{
+		if (recorridoLego1) 
+		{
+			movLego_z += 1.0f;
+			//cout << "Posicion x: " << movLego_x << endl; 
+			//cout << "Posicion y: " << movLego_y << endl;
+			//cout << "Posicion z: " << movLego_z << endl;
+			movPieDer -= 5.0f;
+			movPieIzq += 5.0f;
+			movBrazoDer += 5.0;
+			movBrazoIzq -= 5.0f;
+			if (movPieDer == -40.0f && movPieIzq == 40.f && movBrazoDer == 40.f && movBrazoIzq == -40.0f) 
+			{
+				movPieDer += 5.0f;
+			}
+			else if (movPieDer == 40.0f && movPieIzq == -40.f && movBrazoDer == -40.f && movBrazoIzq == 40.0f)
+			{
+				movPieDer -= 5.0;
+			}
+
+			if (movLego_z == 200.0f)
+			{
+				recorridoLego1 = false;
+				movPieDer = 0.0f;
+				movPieIzq = 0.0f;
+				movBrazoDer = 0.0f;
+				movBrazoIzq = 0.0f;
+				animacionLego = false;
+			}
+		}
+	}
+
+	if (animacionLego2)
+	{
+		if (recorrido2Lego1)
+		{
+			movBrazoDer2 -= 3.0f;
+			if (movBrazoDer2 == -60.f)
+			{
+				recorrido2Lego1 = false;
+				recorrido2Lego2 = true;
+			}
+		}
+		if (recorrido2Lego2)
+		{
+			movBrazoIzq2 -= 3.0f;
+			if (movBrazoIzq2 == -60.f)
+			{
+				recorrido2Lego2 = false;
+				recorrido2Lego3 = true;
+			}
+		}
+		if (recorrido2Lego3)
+		{
+			movBrazoDer2 -= 3.0f;
+			if (movBrazoDer2 == -120.f)
+			{
+				recorrido2Lego3 = false;
+				recorrido2Lego4 = true;
+			}
+		}
+		if (recorrido2Lego4)
+		{
+			movBrazoIzq2 -= 3.0f;
+			if (movBrazoIzq2 == -120.f)
+			{
+				recorrido2Lego4 = false;
+				recorrido2Lego5 = true;
+			}
+		}
+		if (recorrido2Lego5)
+		{
+			movBrazoDer2 += 3.0f;
+			if (movBrazoDer2 == -60.f)
+			{
+				recorrido2Lego5 = false;
+				recorrido2Lego6 = true;
+			}
+		}
+		if (recorrido2Lego6)
+		{
+			movBrazoIzq2 += 3.0f;
+			if (movBrazoIzq2 == -60.f)
+			{
+				recorrido2Lego6 = false;
+				recorrido2Lego7 = true;
+			}
+		}
+		if (recorrido2Lego7)
+		{
+			movBrazoDer2 += 3.0f;
+			if (movBrazoDer2 == 40.f)
+			{
+				recorrido2Lego7 = false;
+				recorrido2Lego8 = true;
+			}
+		}
+		if (recorrido2Lego8)
+		{
+			movBrazoIzq2 += 3.0f;
+			if (movBrazoIzq2 == 40.f)
+			{
+				recorrido2Lego6 = false;
+				animacionLego2 = false;
+			}
+		}
+
+	}
 }
 
 void getResolution()
@@ -282,35 +543,35 @@ int main()
 	Model exterior1("resources/objects/Exterior/Exterior.obj");
 
 	//MODELOS PARA ANIMAR
+	//TREN
+	Model trenEstructura("resources/objects/Tren/TrenEstructura.obj");
+	Model trenCampana("resources/objects/Tren/TrenCampana.obj");
+	Model trenBarraI("resources/objects/Tren/TrenBarraIzq.obj");
+	Model trenBarraD("resources/objects/Tren/TrenBarraDer.obj");
+	Model trenRuedaI1("resources/objects/Tren/TrenRuedaIzq1.obj");
+	Model trenRuedaI2("resources/objects/Tren/TrenRuedaIzq2.obj");
+	Model trenRuedaI3("resources/objects/Tren/TrenRuedaIzq3.obj");
+	Model trenRuedaI4("resources/objects/Tren/TrenRuedaIzq4.obj");
+	Model trenRuedaD1("resources/objects/Tren/TrenRuedaDer1.obj");
+	Model trenRuedaD2("resources/objects/Tren/TrenRuedaDer2.obj");
+	Model trenRuedaD3("resources/objects/Tren/TrenRuedaDer3.obj");
+	Model trenRuedaD4("resources/objects/Tren/TrenRuedaDer4.obj");
+
 	//LEGO
-	//Model legocabeza("resources/objects/Lego/LegoCabeza.obj");
-	//Model legocuerpo("resources/objects/Lego/LegoCuero.obj");
-	//Model legobrazoizq("resources/objects/Lego/LegoBrazoIzq.obj");
-	//Model legobrazoder("resources/objects/Lego/LegoBrazoDer.obj");
-	//Model legopieizq("resources/objects/Lego/LegoPieIzq.obj");
-	//Model legopieder("resources/objects/Lego/LegoPieDer.obj");
+	Model legocabeza("resources/objects/Lego/LegoCabeza.obj");
+	Model legocuerpo("resources/objects/Lego/LegoCuero.obj");
+	Model legobrazoizq("resources/objects/Lego/LegoBrazoIzq.obj");
+	Model legobrazoder("resources/objects/Lego/LegoBrazoDer.obj");
+	Model legopieizq("resources/objects/Lego/LegoPieIzq.obj");
+	Model legopieder("resources/objects/Lego/LegoPieDer.obj");
 
 	//LEG
-	Model legocabeza2("resources/objects/Lego/LegCabeza.obj");
-	Model legocuerpo2("resources/objects/Lego/LegCuero.obj");
-	Model legobrazoizq2("resources/objects/Lego/LegBrazoIzq.obj");
-	Model legobrazoder2("resources/objects/Lego/LegBrazoDer.obj");
-	Model legopieizq2("resources/objects/Lego/LegPieIzq.obj");
-	Model legopieder2("resources/objects/Lego/LegPieDer.obj");
-
-	//TREN
-	//Model trenEstructura("resources/objects/Tren/TrenEstructura.obj");
-	//Model trenCampana("resources/objects/Tren/TrenCampana.obj");
-	//Model trenBarraI("resources/objects/Tren/TrenBarraIzq.obj");
-	//Model trenBarraD("resources/objects/Tren/TrenBarraDer.obj");
-	//Model trenRuedaI1("resources/objects/Tren/TrenRuedaIzq1.obj");
-	//Model trenRuedaI2("resources/objects/Tren/TrenRuedaIzq2.obj");
-	//Model trenRuedaI3("resources/objects/Tren/TrenRuedaIzq3.obj");
-	//Model trenRuedaI4("resources/objects/Tren/TrenRuedaIzq4.obj");
-	//Model trenRuedaD1("resources/objects/Tren/TrenRuedaDer1.obj");
-	//Model trenRuedaD2("resources/objects/Tren/TrenRuedaDer2.obj");
-	//Model trenRuedaD3("resources/objects/Tren/TrenRuedaDer3.obj");
-	//Model trenRuedaD4("resources/objects/Tren/TrenRuedaDer4.obj");
+	Model legocabeza2("resources/objects/Leg/LegCabeza.obj");
+	Model legocuerpo2("resources/objects/Leg/LegCuerpo.obj");
+	Model legobrazoizq2("resources/objects/Leg/LegBrazoIzq.obj");
+	Model legobrazoder2("resources/objects/Leg/LegBrazoDer.obj");
+	Model legopieizq2("resources/objects/Leg/LegPieIzq.obj");
+	Model legopieder2("resources/objects/Leg/LegPieDer.obj");
 
 	//Reloj
 	//Model relojBase("resources/objects/Reloj/RelojBase.obj");
@@ -385,7 +646,14 @@ int main()
 		staticShader.setFloat("material_shininess", 32.0f);
 
 		glm::mat4 model = glm::mat4(1.0f);
-		glm::mat4 tmp = glm::mat4(1.0f);
+		glm::mat4 modelTren = glm::mat4(1.0f);
+		glm::mat4 modelLeg = glm::mat4(1.0f);
+		glm::mat4 tmp1 = glm::mat4(1.0f);
+		glm::mat4 tmp2 = glm::mat4(1.0f);
+		glm::mat4 tmp3 = glm::mat4(1.0f);
+		glm::mat4 tmp4 = glm::mat4(1.0f);
+		glm::mat4 tmp5 = glm::mat4(1.0f);
+		glm::mat4 tmp6 = glm::mat4(1.0f);
 		// view/projection transformations
 		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 10000.0f);
 		glm::mat4 view = camera.GetViewMatrix();
@@ -396,7 +664,6 @@ int main()
 		glm::vec3 lightColor = glm::vec3(0.6f);
 		glm::vec3 diffuseColor = lightColor * glm::vec3(0.5f);
 		glm::vec3 ambientColor = diffuseColor * glm::vec3(0.75f);
-		
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Personaje Animacion
@@ -437,7 +704,7 @@ int main()
 		staticShader.setMat4("projection", projection);
 		staticShader.setMat4("view", view);
 
-		//****** BLOQUE 1 (PISO CASA)
+		//****** BLOQUE 1 (PISO, CASA)
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
@@ -448,7 +715,7 @@ int main()
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Elementos Casa
 		// -------------------------------------------------------------------------------------------------------------------------
-		//****** BLOQUE 1 (PISO CASA)
+		//****** BLOQUE 1 (PISO, CASA)
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
@@ -540,7 +807,6 @@ int main()
 		// Elementos Exteriores
 		// -------------------------------------------------------------------------------------------------------------------------
 		//****** BLOQUE 5 (Exterior)
-
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
@@ -550,153 +816,134 @@ int main()
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Elementos Animaciones
 		// -------------------------------------------------------------------------------------------------------------------------
-
-		//Lego
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//legocabeza.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//legocuerpo.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//legobrazoizq.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//legobrazoder.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//legopieizq.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//legopieder.Draw(staticShader);
-
-		//Lego
+		//Tren
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
+		model = glm::translate(model, glm::vec3(movTren_x, movTren_y, movTren_z));
+		tmp1 = model = glm::rotate(model, glm::radians(orientaTren), glm::vec3(0.0f, 1.0f, 0.0f));
 		staticShader.setMat4("model", model);
-		legocabeza2.Draw(staticShader);
+		trenEstructura.Draw(staticShader);
 
-		model = glm::mat4(1.0f);
+		model = glm::translate(tmp1, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(movCampana), glm::vec3(1.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		trenCampana.Draw(staticShader); //Movimiento Campana en su eje
+
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
+		model = glm::rotate(model, glm::radians(movBarra), glm::vec3(1.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		trenBarraI.Draw(staticShader); //Movimiento Barra adelante atras
+
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(movBarra), glm::vec3(1.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		trenBarraD.Draw(staticShader);   
+		
+		//Giro de la rueda INICIAN
+		model = glm::translate(tmp1, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giroRuedas), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		trenRuedaI1.Draw(staticShader); 
+
+		model = glm::translate(tmp1, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giroRuedas), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		trenRuedaI2.Draw(staticShader);
+
+		model = glm::translate(tmp1, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giroRuedas), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		trenRuedaI3.Draw(staticShader);
+
+		model = glm::translate(tmp1, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giroRuedas), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		trenRuedaI4.Draw(staticShader);
+
+		model = glm::translate(tmp1, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giroRuedas), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		trenRuedaD1.Draw(staticShader);
+
+		model = glm::translate(tmp1, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giroRuedas), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		trenRuedaD2.Draw(staticShader);
+
+		model = glm::translate(tmp1, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giroRuedas), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		trenRuedaD3.Draw(staticShader);
+
+		model = glm::translate(tmp1, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(giroRuedas), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		trenRuedaD4.Draw(staticShader);
+
+		//Lego
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(movLego_x, movLego_y, movLego_z));
+		tmp2 = model = glm::rotate(model, glm::radians(orientaLego), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(movTorzo), glm::vec3(1.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		legocuerpo.Draw(staticShader);
+
+		model = glm::translate(tmp2, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(movCabeza), glm::vec3(0.0f, 0.0f, 1.0f));
+		staticShader.setMat4("model", model);
+		legocabeza.Draw(staticShader); //Define el movimiento de la cabeza
+
+		model = glm::translate(tmp2, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(movBrazoIzq), glm::vec3(1.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		legobrazoizq.Draw(staticShader); //Define el movimiento de las extremidades
+
+		model = glm::translate(tmp2, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(movBrazoDer), glm::vec3(1.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		legobrazoder.Draw(staticShader); //Define el movimiento de las extremidades
+
+		model = glm::translate(tmp2, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(movPieIzq), glm::vec3(1.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		legopieizq.Draw(staticShader); //Define el movimiento de las extremidades
+
+		model = glm::translate(tmp2, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(movPieDer), glm::vec3(1.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		legopieder.Draw(staticShader); //Define el movimiento de las extremidades
+
+		//Lego2
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(movLego2_x, movLego2_y, movLego2_z));
+		tmp3 = model = glm::rotate(model, glm::radians(orientaLego2), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(movTorzo2), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", model);
 		legocuerpo2.Draw(staticShader);
 
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
+		model = glm::translate(tmp4, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(movCabeza2), glm::vec3(0.0f, 0.0f, 1.0f));
 		staticShader.setMat4("model", model);
-		legobrazoizq2.Draw(staticShader);
+		legocabeza2.Draw(staticShader); //Define el movimiento de la cabeza
 
-		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
+		model = glm::rotate(model, glm::radians(movBrazoIzq2), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", model);
-		legobrazoder2.Draw(staticShader);
+		legobrazoizq2.Draw(staticShader); //Define el movimiento de las extremidades
 
-		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
+		model = glm::rotate(model, glm::radians(movBrazoDer2), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", model);
-		legopieizq2.Draw(staticShader);
+		legobrazoder2.Draw(staticShader); //Define el movimiento de las extremidades
 
-		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
+		model = glm::rotate(model, glm::radians(movPieIzq2), glm::vec3(1.0f, 0.0f, 0.0f));
 		staticShader.setMat4("model", model);
-		legopieder2.Draw(staticShader);
+		legopieizq2.Draw(staticShader); //Define el movimiento de las extremidades
 
-		//Tren
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenEstructura.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenCampana.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenBarraI.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenBarraD.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenRuedaI1.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenRuedaI2.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenRuedaI3.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenRuedaI4.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenRuedaD1.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenRuedaD2.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenRuedaD3.Draw(staticShader);
-
-		//model = glm::mat4(1.0f);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.2f));
-		//staticShader.setMat4("model", model);
-		//trenRuedaD4.Draw(staticShader);
+		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		model = glm::rotate(model, glm::radians(movPieDer2), glm::vec3(1.0f, 0.0f, 0.0f));
+		staticShader.setMat4("model", model);
+		legopieder2.Draw(staticShader);//Define el movimiento de las extremidades
 
 		//Reloj
 		//model = glm::mat4(1.0f);
@@ -729,11 +976,11 @@ int main()
 		//staticShader.setMat4("model", model);
 		//relojMane1.Draw(staticShader);
 
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
-		staticShader.setMat4("model", model);
-		relojMane2.Draw(staticShader);
+		//model = glm::mat4(1.0f);
+		//model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
+		//model = glm::scale(model, glm::vec3(0.2f));
+		//staticShader.setMat4("model", model);
+		//relojMane2.Draw(staticShader);
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Caja Transparente --- Siguiente Práctica
@@ -812,10 +1059,80 @@ void my_input(GLFWwindow *window, int key, int scancode, int action, int mode)
 	//	lightPosition.x--;
 
 	//ACTIVAR ANIMACIONES
-	//Animacion Lego
-	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
-		animacion ^= true;
+	//if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
+	//	animacion ^= true;
 	//Animacion Tren
+	if (key == GLFW_KEY_1 && action == GLFW_PRESS)
+		animacionTren ^= true;
+
+	//Regresar a su posicion el tren
+	if (key == GLFW_KEY_2 & action == GLFW_PRESS)
+	{
+		movTren_x = 0.0f;
+		movTren_y = 0.0f;
+		movTren_z = 0.0f;
+		movCampana = 0.0f;
+		movBarra = 0.0f;
+		giroRuedas = 0.0f;
+		orientaTren = 0.0f;
+		animacionTren = false;
+		recorridoTren1 = true;
+		recorridoTren2 = false;
+		recorridoTren3 = false;
+		recorridoTren4 = false;
+		recorridoTren5 = false;
+		recorridoTren6 = false;
+		recorridoTren7 = false;
+	}
+
+	//Animacion Lego
+	if (key == GLFW_KEY_3 && action == GLFW_PRESS)
+		animacionLego ^= true;
+
+	//Regresar Lego
+	if (key == GLFW_KEY_4 & action == GLFW_PRESS && animacionTren == false)
+	{
+		movLego_x = 0.0f;
+		movLego_y = 0.0f;
+		movLego_z = 0.0f;
+		movPieDer = 0.0f;
+		movPieIzq = 0.0f;
+		movBrazoDer = 0.0f;
+		movBrazoIzq = 0.0f;
+		movCabeza = 0.0f;
+		movTorzo = 0.0f;
+		orientaLego = 0.0f;
+		animacionLego = false;
+		recorridoLego1 = true;
+	}
+
+	//Animacion Lego2
+	if (key == GLFW_KEY_5 && action == GLFW_PRESS)
+		animacionLego2 ^= true;
+
+	//Regresar Lego
+	if (key == GLFW_KEY_6 & action == GLFW_PRESS && animacionTren == false)
+	{
+		movLego2_x = 0.0f;
+		movLego2_y = 0.0f;
+		movLego2_z = 0.0f;
+		movPieDer2 = 0.0f;
+		movPieIzq2 = 0.0f;
+		movBrazoDer2 = 0.0f;
+		movBrazoIzq2 = 0.0f;
+		movCabeza2 = 0.0f;
+		movTorzo2 = 0.0f;
+		orientaLego2 = 0.0f;
+		animacionLego2 = false;
+		recorrido2Lego1 = true;
+		recorrido2Lego2 = false;
+		recorrido2Lego3 = false;
+		recorrido2Lego4 = false;
+		recorrido2Lego5 = false;
+		recorrido2Lego6 = false;
+		recorrido2Lego7 = false;
+		recorrido2Lego8 = false;
+	}
 
 	//Animacion Reloj
 
